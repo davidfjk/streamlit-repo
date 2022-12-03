@@ -1,8 +1,16 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
+import os
 
-df = pd.read_csv("../data/train.csv", index_col=0)
+
+
+DIRECTORY = os.path.dirname(os.path.realpath(__file__))
+df = pd.read_csv(f'{DIRECTORY}/../data/train.csv', index_col=0)
+
+
+
+# df = pd.read_csv("../data/train.csv", index_col=0)
 
 y = df['Survived']
 X = df[['Pclass', 'Sex', 'Age', 'SibSp', 'Parch']]

@@ -7,10 +7,19 @@ import seaborn as sns
 import streamlit as st
 
 import pickle
+import os
 
-df = pd.read_csv("./data/train.csv")
 
-MODEL_FILE = "./artefacts/clf_fitted.bin"
+DIRECTORY = os.path.dirname(os.path.realpath(__file__))
+
+df = pd.read_csv(f'{DIRECTORY}/data/train.csv')
+
+MODEL_FILE = f'{DIRECTORY}/artefacts/clf_fitted.bin'
+
+
+# df = pd.read_csv("./data/train.csv")
+
+# MODEL_FILE = "./artefacts/clf_fitted.bin"
 
 st.title("Titanic Survirvor Predictor")
 
